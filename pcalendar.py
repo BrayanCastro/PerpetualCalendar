@@ -1,11 +1,10 @@
 # Author: Brayan Castro Lugo
-# Class: COMP 141
-# Program 3: Perpetual Calendar
-# Pledge: I have neither given nor received unauthorized aid on this program. 
-# Description: In this program I have designed a perpetual calendar by writing a number of functions that will work together to Compute and print the day of the year for this month/day/year , Compute and print the day of the week for this month/day/year, Compute and print the day of the week for user's month and day, but for the year 2020, and Compute and print the day of the week for New Year's Day on the user's year..
+# Program: Perpetual Calendar
+# Description: In this program I have designed a perpetual calendar by writing a number of functions that will work together to Compute and print the day of the year for this month/day/year , Compute and print the day of the week for this month/day/year, Compute and print the day of the week for user's month and day, but for the year 2020, and Compute and print the day of the week for New Year's Day on the user's year.
 
 
-#This function takes a parameter called year, which will be an integer. Then this function will return True if the year is a leap year, and False if it is not.
+#This function takes a parameter called year, which will be an integer. 
+#Then this function will return True if the year is a leap year, and False if it is not.
 def is_leap(year):
     if year % 400 == 0:
         return True
@@ -61,7 +60,8 @@ def magic_month(month):
   
   
   
-#This function is called day_of_year and takes three integer parameters: a month (1-12), a day (1-31), and a year (any year is possible). This function then returns the day of year (1-366) that the given date occurs on.
+#This function is called day_of_year and takes three integer parameters: a month (1-12), a day (1-31), and a year (any year is possible). 
+#This function then returns the day of year (1-366) that the given date occurs on.
 def day_of_year(month, day, year):
   if is_leap(year) == False:
      return magic_month(month) + day
@@ -73,7 +73,8 @@ def day_of_year(month, day, year):
     
     
 
-#This function will calculate the day of the week number (from the table below) for any January 1 in history. It is called new_years_day, and takes an integer parameter called year, and returns an integer interpreted as a day of the week.
+#This function will calculate the day of the week number (from the table below) for any January 1 in history. 
+#It is called new_years_day, and takes an integer parameter called year, and returns an integer interpreted as a day of the week.
 def new_years_day(year):
   Sunday = 0
   Monday =1
@@ -90,13 +91,15 @@ def new_years_day(year):
     
   
   
-#This function takes three parameters: the month (1-12), the day of the month (1-31), and the year. This function will then compute the day of the week for any day of any year by returning this as an integer value.   
+#This function takes three parameters: the month (1-12), the day of the month (1-31), and the year. 
+#This function will then compute the day of the week for any day of any year by returning this as an integer value.   
 def day_of_week(month, day, year):
   return (((day_of_year(month, day, year)) + (new_years_day(year)))-1)%7
   
   
   
-#This function is called day_of_week_str, and does the same operation as day_of_week, except the answer is returned as a string. It takes three parameters: the month (1-12), the day of the month (1-31), and the year. 
+#This function is called day_of_week_str, and does the same operation as day_of_week, except the answer is returned as a string. 
+#It takes three parameters: the month (1-12), the day of the month (1-31), and the year. 
 def day_of_week_str(month, day, year):
   dayz = day_of_week(month, day, year)
   if dayz == 0:
